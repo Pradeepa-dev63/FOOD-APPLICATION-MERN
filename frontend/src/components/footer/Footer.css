@@ -1,0 +1,113 @@
+.footer{
+    color: white;
+    background-color:chocolate;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    margin: 50px;
+    border-radius: 20px;
+    transition: 0.5s all ease-in-out;
+    margin-bottom: 18px;
+    margin-top: 33px;
+}
+.footer-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    padding: 20px;
+ 
+}
+.footer-content img {
+     width: 80px;
+     height: 70px;
+     border-radius: 50%;
+}
+.footer-content .media-icon{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+.footer-content .media-icon img{
+    margin-left: 0px;
+    width: 48px;
+    height: 48px;
+}
+
+.footer-content p:hover{
+    color:aliceblue;
+    font-size: 17px;
+}
+.footer-content-left, 
+.footer-content-right,
+.footer-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+    
+.footer-content-left li, 
+.footer-content-right li,
+.footer-content-center li {
+    list-style: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 19px;
+    margin-left: 5px;
+} 
+.footer-content-right  h2,
+.footer-content-center  h2{
+    list-style: none;
+    color:black;
+} 
+.footer-content h2:hover{
+   color:aqua;
+}
+
+.footer-content li:hover{
+    color:aqua;
+}
+.footer-copyright{
+    align-items: center;
+    padding:15px 15px ;
+    justify-content: center;
+    margin-bottom: 10px;
+    color:maroon;
+    font-family: 'Courier New', Courier, monospace;
+}
+.footer-copyright span{
+    color:#ff014f;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    transform: scale(1.06);
+ 
+}
+.footer-copyright span:hover{
+    color:darkorchid;
+}
+.footer-copyright:hover{
+    color:black;
+    font-weight: bold;
+}
+
+/*---------------*/
+
+@media (max-width:750px){
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-content-right li{
+     padding-right: 10px;
+     margin-left: 0px;
+   }
+   .footer-content .media-icon img{
+    padding: 0;
+    width: 38px;
+    height: 38px;
+}
+
+}

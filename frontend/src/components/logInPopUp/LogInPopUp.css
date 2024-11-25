@@ -1,0 +1,102 @@
+.login-popup{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    border-radius: 20px ;
+    margin-top: 0px;
+    
+}
+.login-popup .sub-main{
+    background-image: url(../assets/back_3.jpg);
+    border-radius: 120px ;
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: 1;
+    width: 95%;
+    height: 95%;
+    display: grid ;  
+    margin: 25px 25px 25px 25px;
+    padding: 10px;
+}
+.login-popup-container{
+    place-self:center;
+    width: max(23vm , 30px);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    animation: fadeIn 0.5s;
+}
+.log-in-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:chocolate;
+    font-weight: bold;
+    font-size: 19px;
+}
+.log-in-title img {
+    width: 16px;
+    cursor: pointer;
+}
+.login-popup-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.login-popup-inputs input{
+    outline: none;
+    border: 1px solid darkgoldenrod;
+    padding: 10px;
+    border-radius: 4px;
+}
+.login-popup-condition{
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    margin-top: -15px;
+}
+.login-popup button{
+    color:whitesmoke;
+    background-color: chocolate;
+    padding: 10px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+.login-popup p span{
+    color: chocolate;
+    font-weight: bold;
+}
+
+/*------------*/
+@media (max-width:750px){
+    .login-popup{
+      background:none;
+      padding: 25px 65px 40px 25px;
+    }
+    .login-popup .main{
+      background: none;
+    
+    }
+    .login-popup .sub-main {
+        margin-right: 30px;
+        padding: 25px 25px 25px 25px;
+        background-image: none;
+        background-color: bisque;
+        width: 84%;
+        height: 55%;
+        margin-left: 17px;
+        border-radius: 20px;
+        margin-top: 90px;
+       
+    }
+}
+
+
+
