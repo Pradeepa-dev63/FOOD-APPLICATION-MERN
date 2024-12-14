@@ -1,26 +1,42 @@
 import express from "express" 
-import connectedDB from "./data_base/db.js"
 import foodRouter from "./routes/foodRoute.js"
+import UserRouter from "./routes/UserRouter.js"
+import cors from 'cors'
+import connectedDB from "./data_base/db.js"
+import dotenv from 'dotenv'
+dotenv.config()
 
-// app config
+//=> app config
 const app = express()
 
-// middleware  
-app.use(express.json())
+//=> middleware  
+app.use(cors())
+
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
+// Middleware to parse URL-encoded data (if needed)
+app.use(express.urlencoded({ extended: true }));
+
 
 //-------------------------//
 app.get("/" ,(req,res)=>{ 
-   res.send('API WORKING')
+   res.send('API WORKING - (FOOD APP) ') 
 })
 //-------------------------//
 
-// api endpoint
+//=> api endpoint
 app.use ("/api/food", foodRouter)
 app.use("/images", express.static('uploads'))
+app.use('/api/user' , UserRouter)
 
+//-------------------------------------------------//
 
-// db connect 
+// DB connection 
 connectedDB()
-app.listen(8000, ()=>{
- console.log(`server running at http://localhost:8000`)
+
+// Start the server 
+const PORT = process.env.PORT || 4000
+app.listen(PORT, ()=>{
+ console.log(`server running at http://localhost:${PORT}`) 
 })

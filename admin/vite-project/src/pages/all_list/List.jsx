@@ -1,10 +1,81 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './List.css'
+import axios from 'axios'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const List = () => {
+
+const List = ({url}) => {
+
+ // const url = 'http://localhost:8000'
+
+ const [list,setList] = useState([])
+ const [formData, setFormData] = useState({ name: '', description: '', price:'', category:'',image:'' });
+
+
+ const fetchList = async () => {
+    const response = await axios.get(` ${url}/api/food/list`)
+    //console.log(response.data)
+   if (response.data.success){
+      setList(response.data.data)
+    } 
+    else {
+      toast.error("Error")
+    }
+  }
+
+  const removeFood = async(id)=>{
+   //console.log(foodId)
+  const response = await axios.delete(`${url}/api/food/remove/${id}`  )
+  await fetchList();
+  if(response.data.success){
+    toast.success(response.data.message)
+  } else{
+    //toast.error('Error in removed Food')
+  }
+  }
+
+
+  // const removeFood = async (id)=>{
+  //   try {
+  //     await axios.delete(`${url}/api/food/remove/${id}`);
+  //     setList(items.filter(item => item._id !== id));
+  //     toast.success(response.data.message)
+  // } catch (error) {
+  //     console.error('Error deleting item:', error);
+  // }
+  // }
+
+
+  useEffect(()=>{
+    fetchList()
+  },[]) 
+
   return (
-    <div>
-      list
+    <div className='list add flex-col'>
+      <p>All Food LIst </p>
+      <div className='list-table'>
+        <div className='list-table-format title'>
+          <b> Image </b>
+          <b> Name </b>
+          <b> Category </b>
+          <b> Price </b>
+          <b> Action </b>
+        </div>
+
+        {list.map((item,index)=>{
+          return(
+            <div key = {index} className='list-table-format'> 
+               <img src={ `${url}/images/`+ item.image  } alt="img" />
+
+               <p>{item.name}</p>
+               <p>{item.category}</p>
+               <p>{item.price}</p>
+               <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

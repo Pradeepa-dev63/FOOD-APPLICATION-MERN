@@ -6,8 +6,8 @@ const Header = () => {
     <div className='main'>
     <div className='header'>
        <div className='header-contents'>
-        <h2> Enjoy your food, Enjoy your life..!</h2>
-        <p>Choose from a diverse menu featuring a delectable array of dishes 
+        <h2> Food is my secret, it make happy...! </h2>
+        <p >Choose from a diverse menu featuring a delectable array of dishes 
             crafted with the finest ingredients and culinary experties.
             sacitsfy your cravings and elevate your dining experience, one delicious meal a a time.
         </p>

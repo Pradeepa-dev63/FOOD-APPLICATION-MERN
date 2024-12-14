@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='navbar'>
        <img src={assets.logo}
         style={{width:'70px' , height:'68px'}} alt='img' />
-        <h4>Admin panel</h4>
+        <h3>Admin panel</h3>
       <img className='' src={assets.profile_image} 
        style={{width:'60px' , height:'57px', borderRadius:'50%'}} alt="" />
     </div>
