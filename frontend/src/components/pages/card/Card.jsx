@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Card = () => {
 
-  const {cardItems,food_list,removeFromCard , getTotalCartAmount} = useContext(StoreContext)
+  const {cardItems,food_list,removeFromCard , getTotalCartAmount,url } = useContext(StoreContext)
   const navigate = useNavigate();
   return (
     <div className='card'>
@@ -26,7 +26,7 @@ const Card = () => {
           return (
           <div>
             <div className='card-items-title card-items-items '>
-           <img src={item.image} alt='img' />
+           <img src={url+"/images/"+item.image} alt='img' />
            <p >{item.name}</p>
            <p> $ {item.price}</p>
            <p>{cardItems[item._id]}</p>

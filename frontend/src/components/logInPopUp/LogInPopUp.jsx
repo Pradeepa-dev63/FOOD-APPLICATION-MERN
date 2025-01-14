@@ -11,7 +11,7 @@ const LogInPopUp = ({setShowLogin}) => {
 
    //const url = "http://localhost:8000" ;
 
-    const [currState,setCurrState] = useState('Login')
+    const [currState,setCurrState] = useState('Sign up')
     const [data,setData] = useState({
       name:"",
       email:"",
@@ -29,7 +29,7 @@ const LogInPopUp = ({setShowLogin}) => {
     event.preventDefault()
     let newUrl = url
     if(currState === "Login"){
-          newUrl += '/api/user/login'
+          newUrl += "/api/user/login"
         } else {
           newUrl += "/api/user/register"
         }

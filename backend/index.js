@@ -30,6 +30,7 @@ app.use ("/api/food", foodRouter)
 app.use("/images", express.static('uploads'))
 app.use('/api/user' , UserRouter)
 
+
 //-------------------------------------------------//
 
 // DB connection 
